@@ -37,12 +37,12 @@ Version 1.0
 ##### Vai na pasta src/main/resorces/aplication.properties
 ###### dentro deste arquivo vai ficar mapeado a `url do banco de dados , o username e a senha`
 ###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` `spring.datasource.username=thiagodesenvolvedor` `spring.datasource.password=password`
-##### Para conseguir acessar o Banco de dados e manipular os dados
+##### Para conseguir acessar o Banco de dados e manipular os dados tem
 
-##### criar a classe de interface `Repository{}` 
+##### a classe de interface `Repository{}` 
 ###### interface para se comunicar com o banco de dados
 ###### metodos abstratos crud para manipular e persistir os dados no banco de dados
-##### e classe `Entity`  chamada "Food{}"
+##### e a classe `Entity`  chamada "Food{}"
 ###### representa o banco de dados dentro do java
 ###### vai representar a tabela do banco de dados mapeado para as classes e objetos do java
 ###### em vez de usar SQL cru , nosso JPA converte Java para SQL.
@@ -54,7 +54,23 @@ Version 1.0
 ###### search for `@GeneratedValue(strategy = GenerationType.UUID)`
 ###### e agora declare as colunas dentro da classe entity `Food{}`
 
-até aqui 2h12 minuto ainda estou no minuto do video 1 17
+##### Criar classe `Repository{}` 
+
+###### ela se conecta com o banco de dados e pega os dados
+###### tem que ser interface dentro do pacote food que extenda o Objeto JpaRepository<Tipo-Objeto, Tipo-dado-id> `public interface FoodRepository extends JpaRepository<Food, Long> {
+}`
+###### herda do objeto todos os metodos para manipular dados, usando estes metodos dentro do metodos `getAll()` que fica dentro da classe `FoodController{}`
+##### dentro do `FoodController{}`
+###### cria um objeto da classe FoodRepository do tipo privado `private FoodRepository repository;`
+###### indicar para o Spring que ele faça a injeção dessa dependência dentro da classe `FoodController{}` "que ele se responsabilize para instanciar tal classe quando eu for usar objeto dela"
+###### notação para injeção de dependência `@Autowired` bem em cima quando declarei objeto da classe `Food{}` dentro da minha classe `FoodController{}`
+##### dentro do `getAll()`
+###### cria uma lista do tipo de objeto da classe Food que tem o repository executando seus metodos para trazer tudo do banco de dados `List<Food> foodList = repository.findAll();`
+## agora põe para rodar o file main
+
+
+até aqui 2h20 minuto ainda estou no minuto do video 1 17
+20h10 ->
 
 
 ## [part2](https://youtu.be/WHruc3_2z68) 
