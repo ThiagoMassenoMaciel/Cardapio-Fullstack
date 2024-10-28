@@ -78,14 +78,24 @@ Version 1.0
 ###### logo vamos fazer retornar `List<FoodReponseDTO>` na assinatura do método `getAll()`
 ###### isso vai ser um record "dado estático" que vai receber por parametro os dados igual atributos do objeto Food
 ###### criar um funil para os objetos tipo Food e um map para cada objeto um data transfer object 
-###### `List<FoodResponseDTO> foodlist = repository.findAll().stream().map(FoodResponseDTO::new);`
+###### `List<FoodResponseDTO> foodlist = repository.findAll().stream().map(FoodResponseDTO::new).toList();`
 ###### Dentro do record `FoodResponseDTO{}` eu vou receber pelo parametro do contrutor dele um objeto do tipo Food , e por dentro do contrutor vou passando os atributos de um objeto para dentro do record usando os metodos getters gerados pelo lombok dentro do `Food{}`
 ###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok `@Getter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(of ="id")`
 ###### dentro do construtor do record `FoodResponseDTO{}` vai ficar assim 
-###### `    public FoodResponseDTO( Food food){
-        this(food.getId(), food.getTitle(), food.getImage(), food.getPrice() );
-    }`
-###### parei no 25:50 da parte 1
+###### `    public FoodResponseDTO( Food food){  this(food.getId(), food.getTitle(), food.getImage(), food.getPrice() );  }`
+
+## Esta dando erro no food pois ele nap esta criando automaticamente a tabela foods no banco food
+![image](https://github.com/user-attachments/assets/f77e0753-ffbc-411a-9e1a-d296bdc1fd3c)
+##### vai na config do banco dentro da lateral no intelliJ
+![image](https://github.com/user-attachments/assets/fd7f183c-5fe4-4f19-83fb-1a416aab994a)
+###### seleciona usuario do banco conectado e senha 
+![image](https://github.com/user-attachments/assets/561837ee-1482-4b2d-9910-a7c5e7408eff)
+###### clica : aply , ok , ok 
+
+
+
+##### Publicar nova comida no cardapio por um metodo dentro do `FoodController{}`
+###### `public void saveFood(){}`
 
 até aqui 6h20 minuto ainda estou no minuto do video 25:50
 
