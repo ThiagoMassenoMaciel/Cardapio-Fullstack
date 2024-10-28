@@ -72,7 +72,7 @@ Version 1.0
 ##### [tutorial](https://youtu.be/QVMPa-DuOgk?si=wRAZe7RiVabRUlVK)
 
 ###### Agora vai no insomnia [como usar](https://youtu.be/ww7robHIZbQ?si=4f55d9bkf_sSr0Sm) adiciona uma colection , escolhe o método GET pela url `http://localhost:8080/food` e clica botão [send]
-###### vai retornar um array vazio pois n tinha nada no banco ![image](https://github.com/user-attachments/assets/baf99b79-40ee-439e-b233-e99e76176026)
+###### vai retornar um array vazio pois n tinha nada no banco ![image](https://github.com/user-attachments/assets/5682f746-0892-4aba-b067-047a9ec60ea0)
 
 ##### Não é uma boa pratica retornar do metodo o tipo de dado diretamente a Entity food que fizemos em `getAll()`
 ###### logo vamos fazer retornar `List<FoodReponseDTO>` na assinatura do método `getAll()`
