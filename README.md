@@ -96,7 +96,17 @@ Version 1.0
 
 ##### Publicar nova comida no cardapio por um metodo dentro do `FoodController{}`
 ###### `public void saveFood(){}`
+###### dentro desta classe marque qual metodo vai fazer mapeamento para requisição POST para esse endpoint food ```    @PostMapping     public void saveFood(){     }```
+###### No método de requisição POST o client vai enviar no body o dado que ele quer postar
+###### como vamos pegar esse body da requisição através de uma notação do Spring passado como parâmetro `@RequestBody`
+###### essa notação avisa o spring para fazer injeção da depêndencia pegando o body do client POST e passar como parâmetro
+##### tipo de dado do body que veio do cliente 
+###### cria um record FoodRequestTDO
+###### ```    
+@PostMapping
+   public void saveFood(@RequestBody FoodRequestDTO data){
 
+    }```
 até aqui 6h20 minuto ainda estou no minuto do video 25:50
 
 
