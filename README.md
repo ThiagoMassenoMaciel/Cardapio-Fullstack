@@ -2,6 +2,7 @@
 Version 1.0
 ## [part1](https://youtu.be/lUVureR5GqI?si=MrS2uFq2hSk-41yY)
 ### Desenvolver API usando Java Spring + bd Postgres
+### Criar rotas , conexão com banco de dado, feito as entidades do bd e repositorio
 
 #### Ir no spring initializer [link aqui](https://start.spring.io/) para acelerar processo de desenvolvimento configurando as dependências.
 ##### maven, java, spring boot 3.4.0, java17, name : cardapio-fullstack, artifact : cardapio-fullstack, description: cardapio digital
@@ -100,17 +101,80 @@ Version 1.0
 ###### No método de requisição POST o client vai enviar no body o dado que ele quer postar
 ###### como vamos pegar esse body da requisição através de uma notação do Spring passado como parâmetro `@RequestBody`
 ###### essa notação avisa o spring para fazer injeção da depêndencia pegando o body do client POST e passar como parâmetro
-##### tipo de dado do body que veio do cliente 
+##### tipa o dado do body que veio do cliente 
 ###### cria um record FoodRequestTDO
-###### 
 ```
 @PostMapping
-   public void saveFood(@RequestBody FoodRequestDTO data){
-   }
+public void saveFood(@RequestBody FoodRequestDTO data){
+}
 ```
-até aqui 6h20 minuto ainda estou no minuto do video 25:50
+###### definindo os parametros do record n precisa do id pois isso é responsabilidade do servidor gerar id automático e não do record
+```
+package com.example.cardapio_fullstack.food;
+public record FoodRequestDTO( String title, String image, Integer price) {   
+}
+```
+###### usar o objeto `repository`que manipula os dados no banco , para receber por parâmetro o body do client e salvar na tupla do bd
+```
+repository.save(data);
+```
+###### o repository espera salvar tipo dado Entity Food e não record, logo preciso converter DTO --> Food
+###### repository recebe por um construtor especial tipo dato DTO ```Food foodData = new Food(data);```
+###### na classe `Food{}` devo criar construtor que passa os valores do tipo DTO para os atributos da classe
+```
+    public Food(FoodRequestDTO data) {
+        this.image = data.image();
+        this.title = data.title();
+        this.price = data.price();
+    }
+```
+###### e da um return fazio do tipo void dentro do método `saveFood()`
+```
+    @PostMapping
+    public void saveFood(@RequestBody FoodRequestDTO data){
+        Food foodData = new Food(data);
+        repository.save(foodData);
+        return;
+    }
+```
+##### Agora vai disparar uma requisição do tipo POST para o endpoint `/food` dentro do insomnia
+###### crie um novo request , tipo POST para a url 
+```
+http://localhost:8080/food
+```
+###### dentro do body , escolha formato json e coloque dentro do file body-content 
+```
+{
+	"price": 24,
+	"title": "hamburguer",
+	"image": "https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg"
+}
+```
+###### e para enviar requisição click : send 
+###### se retornar 200 ok , faça um get para mesma url para verificar se realmente foi adicionada no banco ou não
+![image](https://github.com/user-attachments/assets/916ab487-b929-4316-a297-d0989af41f23)
+![image](https://github.com/user-attachments/assets/cf351c5d-4a43-4e0f-87e6-a3e10fd3f5fc)
+### O tipo de ID  gerado pelo servidor do tipo = print abaixo não é válido para sistemas que vão para produção 
+![image](https://github.com/user-attachments/assets/1852ca72-dc02-4d85-b964-0faf28a06650)
+### pois ter a sequencialmente os id não é seguro para o sistema
+## Mais seguro usar UUID para ninuém conseguir chutar id de dados e conseguir capturar
+# E por último a configuração do Course dentro do controller
+##### em cada metodo colocar perto de assinatura dele 
+```
+@CrossOrigin(origins = "*",allowedHeaders = "*")
+```
+###### origins = "*" , para permitir de todas as origins
+###### pode restringuir para dominio apenas da aplicação origins = "dominio-aplicacao" quando for fazer o deploy.
+```
+exemplo a minha aplicação esta rodando no meu localhost na porta 3000
+```
+###### `origins="http://localhost:3000"`
+###### allowedHeaders = "*" , para permitir todos os headers que vierem do meu cliente
 
-
+até aqui 8h30 
 
 ## [part2](https://youtu.be/WHruc3_2z68) 
 ### Desenvolver Front-end e conectar com API 
+### Consumir e publicar dados
+
+####
