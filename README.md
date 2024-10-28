@@ -71,10 +71,24 @@ Version 1.0
 ![image](https://github.com/user-attachments/assets/ade9644f-fff2-46c8-bd5b-94c558342afd)
 ##### [tutorial](https://youtu.be/QVMPa-DuOgk?si=wRAZe7RiVabRUlVK)
 
+###### Agora vai no insomnia [como usar](https://youtu.be/ww7robHIZbQ?si=4f55d9bkf_sSr0Sm) adiciona uma colection , escolhe o método GET pela url `http://localhost:8080/food` e clica botão [send]
+###### vai retornar um array vazio pois n tinha nada no banco ![image](https://github.com/user-attachments/assets/baf99b79-40ee-439e-b233-e99e76176026)
 
+##### Não é uma boa pratica retornar do metodo o tipo de dado diretamente a Entity food que fizemos em `getAll()`
+###### logo vamos fazer retornar `List<FoodReponseDTO>` na assinatura do método `getAll()`
+###### isso vai ser um record "dado estático" que vai receber por parametro os dados igual atributos do objeto Food
+###### criar um funil para os objetos tipo Food e um map para cada objeto um data transfer object 
+###### `List<FoodResponseDTO> foodlist = repository.findAll().stream().map(FoodResponseDTO::new);`
+###### Dentro do record `FoodResponseDTO{}` eu vou receber pelo parametro do contrutor dele um objeto do tipo Food , e por dentro do contrutor vou passando os atributos de um objeto para dentro do record usando os metodos getters gerados pelo lombok dentro do `Food{}`
+###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok `@Getter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(of ="id")`
+###### dentro do construtor do record `FoodResponseDTO{}` vai ficar assim 
+###### `    public FoodResponseDTO( Food food){
+        this(food.getId(), food.getTitle(), food.getImage(), food.getPrice() );
+    }`
+###### parei no 25:50 da parte 1
 
-até aqui 2h20 minuto ainda estou no minuto do video 1 17
-20h10 ->
+até aqui 6h20 minuto ainda estou no minuto do video 25:50
+
 
 
 ## [part2](https://youtu.be/WHruc3_2z68) 
