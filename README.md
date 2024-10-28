@@ -34,9 +34,10 @@ Version 1.0
 ###### clica em explore , dentro do pom.xml online seleciona as tags que tem JPA  e POSTEGRESQL copiar para colar dentro das dependências do projeto no intellij
 ###### aperta no reload para atualizar no intellij
 ![image](https://github.com/user-attachments/assets/b2393718-8a5a-4d68-9ce3-04138f961a09)
+##### Depois de instalado postgresql , abra o pgAdmin , crie o banco food , e veja qual é o usuario.
 ##### Vai na pasta src/main/resorces/aplication.properties
 ###### dentro deste arquivo vai ficar mapeado a `url do banco de dados , o username e a senha`
-###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` `spring.datasource.username=thiagodesenvolvedor` `spring.datasource.password=password`
+###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` `spring.datasource.username=postgres` `spring.datasource.password=password`
 ##### Para conseguir acessar o Banco de dados e manipular os dados tem
 
 ##### a classe de interface `Repository{}` 
@@ -67,6 +68,9 @@ Version 1.0
 ##### dentro do `getAll()`
 ###### cria uma lista do tipo de objeto da classe Food que tem o repository executando seus metodos para trazer tudo do banco de dados `List<Food> foodList = repository.findAll();`
 ## agora põe para rodar o file main
+![image](https://github.com/user-attachments/assets/ade9644f-fff2-46c8-bd5b-94c558342afd)
+##### [tutorial](https://youtu.be/QVMPa-DuOgk?si=wRAZe7RiVabRUlVK)
+
 
 
 até aqui 2h20 minuto ainda estou no minuto do video 1 17
