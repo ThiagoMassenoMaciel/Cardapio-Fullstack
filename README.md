@@ -181,13 +181,35 @@ até aqui 8h30
 ##### receber dados da api para dentro da array data dentro do componente app
 ###### ```data.map(foodData => <Card/>``` para cada um objeto dentro da array data retorne um componente Card
 ##### Criar uma nova interface para receber o objeto que vier da api
-##### para pegar os dados do backeend estando no frontend precisamos usar a lib [react query](https://www.npmjs.com/package/react-query) [tutorial1](https://youtu.be/4n6cD9M21-s?si=kppGT0tQF7zk_Z3G) [tutorial2](https://youtu.be/8K1N3fE-cDs?si=qldbrA4Gi1p9YlgN)
+##### para pegar os dados do backeend estando no frontend precisamos usar a lib [react query](https://www.npmjs.com/package/react-query) [tutorial1](https://youtu.be/4n6cD9M21-s?si=kppGT0tQF7zk_Z3G) [tutorial2](https://youtu.be/8K1N3fE-cDs?si=qldbrA4Gi1p9YlgN) [tutorial kipper](https://youtu.be/ZI9uLACYAd0?si=7QkHngn7esT35xze)
 ```
 	npm install tanstack-query/react-query
 ```
-###### se n funcionar testar este 
+####### se n funcionar testar este 
 ```
 npm i @tanstack/react-query
 ```
+###### declare este hook baixado dentro de uma pasta ./hooks/useFoodData.ts , 
+###### o file `useFoodData.ts` vai ser usado para fazer o fetch nos dados e salvar em uma variavel para conseguir usar
+###### usar lib axios para disparar requisição HTTP
+```
+npm install axios
+```
+###### usar lib axios dentro do componente `useFoodData.ts` 
+###### chame o metodo `useFoodData` dentro do componente `App.tsx`
+``` data: query.data?.data  ``` tem tudo isso esplicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
+##### Agora execute a aplicação para test 
+´´´´npm run dev´´´
+###### Precisa: ligar o pgAdmin, entrar com senha bd, conectar usuario e senha do banco do IntelliJ, executar backend no intelliJ , aí vejo se no navegador aparece igual a kipper dev
+![image](https://github.com/user-attachments/assets/a764d9f2-160b-4e27-9cb4-fedeba423c75)
+##### Erro induzido
+###### Fornercer um QueryClientPRovider empacotando componente principal da aplicação e passando um client pelo props
+##### Fazer o enfeito da parte front-end dentro do components/card/card.tsx ``
+###### use o insomnia para colocar mais pratos no cardápio
+![image](https://github.com/user-attachments/assets/80a8c508-69c3-4bc7-a574-14aefe7dcba9)
+![image](https://github.com/user-attachments/assets/04d6b4e4-831a-4328-a0a5-75a9d145fc6b)
+![image](https://github.com/user-attachments/assets/017ba190-e579-4713-9c26-989e913e5cbc)
 
-####
+até agora foi gasto 3h em apenas 20' de video
+
+
