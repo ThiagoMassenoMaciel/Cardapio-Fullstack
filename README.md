@@ -177,5 +177,17 @@ até aqui 8h30
 ## [part2](https://youtu.be/WHruc3_2z68) 
 ### Desenvolver Front-end e conectar com API 
 ### Consumir e publicar dados
+##### Criar um componente que recebe como parametro um objeto que implemente uma interface para traduzir o que vier FoodRequestBody para dentro do componente card
+##### receber dados da api para dentro da array data dentro do componente app
+###### ```data.map(foodData => <Card/>``` para cada um objeto dentro da array data retorne um componente Card
+##### Criar uma nova interface para receber o objeto que vier da api
+##### para pegar os dados do backeend estando no frontend precisamos usar a lib [react query](https://www.npmjs.com/package/react-query) [tutorial1](https://youtu.be/4n6cD9M21-s?si=kppGT0tQF7zk_Z3G) [tutorial2](https://youtu.be/8K1N3fE-cDs?si=qldbrA4Gi1p9YlgN)
+```
+	npm install tanstack-query/react-query
+```
+###### se n funcionar testar este 
+```
+npm i @tanstack/react-query
+```
 
 ####
