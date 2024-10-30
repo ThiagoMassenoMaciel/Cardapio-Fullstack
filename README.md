@@ -214,6 +214,10 @@ até agora foi gasto 3h em apenas 20' de video
 
 ##### fazer o forme dentro do componente `create-modal`
 ###### que receba o input do título , preço , link url da imagem
-
-
+##### em vez de criar vários inputs crie o componente de variavel constante `Input`
+###### faço isso dentro do componente `Input` para pegar somente a informação do valor input alterado
+```
+onChange={event => updateValue(event.target.value)}
+```
+até agora foi gastado 1h em 25' de video
 
