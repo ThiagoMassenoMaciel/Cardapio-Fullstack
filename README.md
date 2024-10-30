@@ -212,6 +212,8 @@ npm install axios
 
 até agora foi gasto 3h em apenas 20' de video
 
+##### fazer o forme dentro do componente `create-modal`
+###### que receba o input do título , preço , link url da imagem
 
 
 
