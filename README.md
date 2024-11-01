@@ -210,8 +210,6 @@ npm install axios
 ![image](https://github.com/user-attachments/assets/04d6b4e4-831a-4328-a0a5-75a9d145fc6b)
 ![image](https://github.com/user-attachments/assets/017ba190-e579-4713-9c26-989e913e5cbc)
 
-até agora foi gasto 3h em apenas 20' de video
-
 ##### fazer o forme dentro do componente `create-modal`
 ###### que receba o input do título , preço , link url da imagem
 ##### em vez de criar vários inputs crie o componente de variavel constante `Input`
@@ -219,5 +217,5 @@ até agora foi gasto 3h em apenas 20' de video
 ```
 onChange={event => updateValue(event.target.value)}
 ```
-até agora foi gastado 1h em 25' de video
+até agora foi gastado 5h em 26' de video
 
