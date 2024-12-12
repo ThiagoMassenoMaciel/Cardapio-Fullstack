@@ -20,7 +20,7 @@ Version 1.0
 ##### spring web"pra criar aplicações web", 
 ##### lombok"gera métodos automáticos do java in runtime"
 ##### --------------------------------------------------------------------------------------------------------------------------------
-#### dentro do intellij na barra lateral
+### Dentro do intellij na barra lateral
 ###### clicar nos botões com estes nomes para instalar as dependências : maven, seu-projeto, lifecycle, package
 ##### os files de dependencia fica dentro do arquivo pom.xml
 #### ---------------------------------------------------------------------------------------------------------------------------------
