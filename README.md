@@ -15,7 +15,7 @@ Version 1.0
 ##### name : cardapio-fullstack, 
 ##### artifact : cardapio-fullstack, 
 ##### description: cardapio digital
-### add dependencies : 
+### adicionar dependências : 
 ##### spring boot dev tools"reload automático", 
 ##### spring web"pra criar aplicações web", 
 ##### lombok"gera métodos automáticos do java in runtime"
