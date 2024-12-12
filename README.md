@@ -54,8 +54,10 @@ Version 1.0
 ### Depois de instalado postgresql , abra o pgAdmin , crie o banco food , e veja qual é o usuario.
 ##### Vai na pasta src/main/resorces/aplication.properties
 ###### dentro deste arquivo vai ficar mapeado a `url do banco de dados , o username e a senha`
-###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` `spring.datasource.username=postgres` `spring.datasource.password=password`
-##### Primeiro criar o banco e deixar ele rodando antes de conseguir acessar e ou manipular os dados dele
+###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` 
+###### `spring.datasource.username=postgres` 
+###### `spring.datasource.password=password`
+###### Primeiro criar o banco e deixar ele rodando antes de conseguir acessar e ou manipular os dados dele
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### A classe de interface `Repository{}` 
 ###### interface para se comunicar com o banco de dados
