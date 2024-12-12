@@ -6,7 +6,7 @@ Version 1.0
 ##### - Criar rotas , 
 ##### - Fazer conexão com banco de dado, 
 ##### - Fazer as entidades do banco de dados e repositorio
-##### ----------------------------------------------------------------
+##### --------------------------------------------------------------------------------------------------------------------------------
 ### Ir no spring initializer [link aqui](https://start.spring.io/) para acelerar processo de desenvolvimento configurando as dependências.
 ##### maven, 
 ##### java, 
@@ -19,28 +19,28 @@ Version 1.0
 ##### spring boot dev tools"reload automático", 
 ##### spring web"pra criar aplicações web", 
 ##### lombok"gera métodos automáticos do java in runtime"
-##### ----------------------------------------------------------------
+##### --------------------------------------------------------------------------------------------------------------------------------
 ##### dentro do intellij na barra lateral
 ###### clicar para instalar as dependências : maven, seu-projeto, lifecycle, package
 ##### os files de dependencia fica dentro do arquivo pom.xml
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Configuração inicial do intellij
 ###### com file main selecionado vai nas configurações e clica : build execution deployment, compiler, ativar `[]build project automaticaly`
 ###### clica em aply
 ###### mesmo menu , vai em:  advanced settings, clicar no check compiler `[]Allow auto-make to start even if developed aplication is currently running`
 ###### marca o ok e pronto
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Criar arquivo `FoodController.java`
 ###### responsável por concentrar os requests para pegar os dados do cardápio e armazenar mais info no banco de dados
 ###### package adicionar `package com.example.cardapio_fullstack.controller;`
 ###### fazer notação spring da classe ser o controler `@RestController bem emcima da linha que tem assinatura do método`
 ###### definir endpoint `@RequestMapping("food")`
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Requisições do front-end 
 ###### cria um método dentro da classe para retornar para o front-end todos cardápios do bando ` public tipo getAll(){}`
 ###### definir como o método vai ser chamado `@GetMapping public tipo getAll(){}`
 ###### quando bater no endpoint "food" o Get é para chamar este método `getAll`
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Conectar com Banco de Dados, pegar as informações la dentro e retornar neste endpoint
 ###### vai no spring initializer [link aqui](https://start.spring.io/) e baixa mais dependências
 ###### seleciona para maven
@@ -53,7 +53,7 @@ Version 1.0
 ###### dentro deste arquivo vai ficar mapeado a `url do banco de dados , o username e a senha`
 ###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` `spring.datasource.username=postgres` `spring.datasource.password=password`
 ##### Para conseguir acessar o Banco de dados e manipular os dados tem
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### a classe de interface `Repository{}` 
 ###### interface para se comunicar com o banco de dados
 ###### metodos abstratos crud para manipular e persistir os dados no banco de dados
@@ -61,14 +61,14 @@ Version 1.0
 ###### representa o banco de dados dentro do java
 ###### vai representar a tabela do banco de dados mapeado para as classes e objetos do java
 ###### em vez de usar SQL cru , nosso JPA converte Java para SQL.
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Agora dentro da classe `FoodController{}` e dentro do método `getAll()`
 ###### crio um objeto do tipo da classe Entity "Food" para apartir dele criar CLasse "Food" em pacote próprio food
 ###### em cima da assinatura da classe `Food{}` uso mapeamento do jpa para tabela do BD a notação `@Table(name="foods")` e o nome da entity `@Entity(name="foods")` 
 ###### faça estas duas notações para definir chave primária , e id gerado automaticamente `@Id @GeneratedValue(strategy = GenerationType.IDENTITY)`
 ###### search for `@GeneratedValue(strategy = GenerationType.UUID)`
 ###### e agora declare as colunas dentro da classe entity `Food{}`
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Criar classe `Repository{}` 
 
 ###### ela se conecta com o banco de dados e pega os dados
@@ -84,7 +84,7 @@ Version 1.0
 ## agora põe para rodar o file main
 ![image](https://github.com/user-attachments/assets/ade9644f-fff2-46c8-bd5b-94c558342afd)
 ##### [tutorial](https://youtu.be/QVMPa-DuOgk?si=wRAZe7RiVabRUlVK)
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ###### Agora vai no insomnia [como usar](https://youtu.be/ww7robHIZbQ?si=4f55d9bkf_sSr0Sm) adiciona uma colection , escolhe o método GET pela url `http://localhost:8080/food` e clica botão [send]
 ###### vai retornar um array vazio pois n tinha nada no banco ![image](https://github.com/user-attachments/assets/5682f746-0892-4aba-b067-047a9ec60ea0)
 
@@ -97,7 +97,7 @@ Version 1.0
 ###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok `@Getter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(of ="id")`
 ###### dentro do construtor do record `FoodResponseDTO{}` vai ficar assim 
 ###### `    public FoodResponseDTO( Food food){  this(food.getId(), food.getTitle(), food.getImage(), food.getPrice() );  }`
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ## Esta dando erro no food pois ele nap esta criando automaticamente a tabela foods no banco food
 ![image](https://github.com/user-attachments/assets/f77e0753-ffbc-411a-9e1a-d296bdc1fd3c)
 ##### vai na config do banco dentro da lateral no intelliJ
@@ -105,7 +105,7 @@ Version 1.0
 ###### seleciona usuario do banco conectado e senha 
 ![image](https://github.com/user-attachments/assets/561837ee-1482-4b2d-9910-a7c5e7408eff)
 ###### clica : aply , ok , ok 
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Publicar nova comida no cardapio por um metodo dentro do `FoodController{}`
 ###### `public void saveFood(){}`
 ###### dentro desta classe marque qual metodo vai fazer mapeamento para requisição POST para esse endpoint food ```    @PostMapping     public void saveFood(){     }```
@@ -186,7 +186,7 @@ até aqui 8h30
 
 ## [part2](https://youtu.be/WHruc3_2z68) 
 ### Desenvolver Front-end e conectar com API 
-#### -----------------------------------------------------------------
+#### ---------------------------------------------------------------------------------------------------------------------------------
 ### Consumir e publicar dados
 ##### Criar um componente que recebe como parametro um objeto que implemente uma interface para traduzir o que vier FoodRequestBody para dentro do componente card
 ##### receber dados da api para dentro da array data dentro do componente app
