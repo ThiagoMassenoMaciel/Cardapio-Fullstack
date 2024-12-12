@@ -6,7 +6,7 @@ Version 1.0
 ##### - Criar rotas , 
 ##### - Fazer conexão com banco de dados, 
 ##### - Fazer as entidades do banco de dados e repositorio
-##### --------------------------------------------------------------------------------------------------------------------------------
+#### --------------------------------------------------------------------------------------------------------------------------------
 ### Ir no spring initializer [link aqui](https://start.spring.io/) para acelerar processo de desenvolvimento configurando as dependências.
 ##### maven, 
 ##### java, 
@@ -20,7 +20,7 @@ Version 1.0
 ##### spring web"pra criar aplicações web", 
 ##### lombok"gera métodos automáticos do java in runtime"
 ##### --------------------------------------------------------------------------------------------------------------------------------
-##### dentro do intellij na barra lateral
+#### dentro do intellij na barra lateral
 ###### clicar nos botões com estes nomes para instalar as dependências : maven, seu-projeto, lifecycle, package
 ##### os files de dependencia fica dentro do arquivo pom.xml
 #### ---------------------------------------------------------------------------------------------------------------------------------
