@@ -76,8 +76,11 @@ Version 1.0
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Criar classe `Repository{}` 
 ###### ela se conecta com o banco de dados e pega os dados
-###### tem que ser interface dentro do pacote food que extenda o Objeto JpaRepository<Tipo-Objeto, Tipo-dado-id> `public interface FoodRepository extends JpaRepository<Food, Long> {
-}`
+###### tem que ser interface dentro do pacote food que extenda o Objeto `JpaRepository<Tipo-Objeto, Tipo-dado-id>`
+```
+public interface FoodRepository extends JpaRepository<Food, Long> {
+}
+```
 ###### herda do objeto todos os metodos para manipular dados, usando estes metodos dentro do metodos `getAll()` que fica dentro da classe `FoodController{}`
 ##### dentro do `FoodController{}`
 ###### cria um objeto da classe FoodRepository do tipo privado `private FoodRepository repository;`
