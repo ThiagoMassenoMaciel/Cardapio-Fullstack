@@ -44,7 +44,9 @@ Version 1.0
 ##### Conectar com Banco de Dados, pegar as informações la dentro e retornar neste endpoint
 ###### vai no spring initializer [link aqui](https://start.spring.io/) e baixa mais dependências
 ###### seleciona para maven
-###### dependências : spring data JPA"persistências de dados sql para java", PostgreSQL driver"conectar aplicação com Banco de dados"
+###### dependências : 
+###### spring data JPA"persistências de dados sql para java", 
+###### PostgreSQL driver"conectar aplicação com Banco de dados"
 ###### clica em explore , dentro do pom.xml online seleciona as tags que tem JPA  e POSTEGRESQL copiar para colar dentro das dependências do projeto no intellij
 ###### aperta no reload para atualizar no intellij
 ![image](https://github.com/user-attachments/assets/b2393718-8a5a-4d68-9ce3-04138f961a09)
