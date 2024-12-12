@@ -21,7 +21,7 @@ Version 1.0
 ##### lombok"gera métodos automáticos do java in runtime"
 ##### --------------------------------------------------------------------------------------------------------------------------------
 ##### dentro do intellij na barra lateral
-###### clicar para instalar as dependências : maven, seu-projeto, lifecycle, package
+###### clicar nos botões com estes nomes para instalar as dependências : maven, seu-projeto, lifecycle, package
 ##### os files de dependencia fica dentro do arquivo pom.xml
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Configuração inicial do intellij
