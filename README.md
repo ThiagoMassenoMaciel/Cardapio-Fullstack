@@ -37,7 +37,7 @@ Version 1.0
 ###### definir endpoint `@RequestMapping("food")`
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ##### Requisições do front-end 
-###### cria um método dentro da classe para retornar para o front-end todos cardápios do bando ` public tipo getAll(){}`
+###### cria um método dentro da classe para retornar para o front-end todos cardápios do banco de dados ` public tipo getAll(){}`
 ###### definir como o método vai ser chamado `@GetMapping public tipo getAll(){}`
 ###### quando bater no endpoint "food" o Get é para chamar este método `getAll`
 #### ---------------------------------------------------------------------------------------------------------------------------------
