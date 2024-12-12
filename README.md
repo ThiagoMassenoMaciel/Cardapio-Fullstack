@@ -101,9 +101,16 @@ public interface FoodRepository extends JpaRepository<Food, Long> {
 ###### criar um funil para os objetos tipo Food e um map para cada objeto um data transfer object 
 ###### `List<FoodResponseDTO> foodlist = repository.findAll().stream().map(FoodResponseDTO::new).toList();`
 ###### Dentro do record `FoodResponseDTO{}` eu vou receber pelo parametro do contrutor dele um objeto do tipo Food , e por dentro do contrutor vou passando os atributos de um objeto para dentro do record usando os metodos getters gerados pelo lombok dentro do `Food{}`
-###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok `@Getter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(of ="id")`
+###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok 
+###### `@Getter @NoArgsConstructor 
+###### @AllArgsConstructor 
+###### @EqualsAndHashCode(of ="id")`
 ###### dentro do construtor do record `FoodResponseDTO{}` vai ficar assim 
-###### `    public FoodResponseDTO( Food food){  this(food.getId(), food.getTitle(), food.getImage(), food.getPrice() );  }`
+```    
+public FoodResponseDTO( Food food){
+      this( food.getId(), food.getTitle(), food.getImage(), food.getPrice() );
+}
+```
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Esta dando erro no food pois ele nap esta criando automaticamente a tabela foods no banco food
 ![image](https://github.com/user-attachments/assets/f77e0753-ffbc-411a-9e1a-d296bdc1fd3c)
