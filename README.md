@@ -4,7 +4,7 @@ Version 1.0
 ## [part1](https://youtu.be/lUVureR5GqI?si=MrS2uFq2hSk-41yY)
 ### Desenvolver API usando Java Spring + bd Postgres
 ##### - Criar rotas , 
-##### - Fazer conexão com banco de dado, 
+##### - Fazer conexão com banco de dados, 
 ##### - Fazer as entidades do banco de dados e repositorio
 ##### --------------------------------------------------------------------------------------------------------------------------------
 ### Ir no spring initializer [link aqui](https://start.spring.io/) para acelerar processo de desenvolvimento configurando as dependências.
