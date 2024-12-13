@@ -179,11 +179,12 @@ http://localhost:8080/food
 ###### se retornar 200 ok , faça um get para mesma url para verificar se realmente foi adicionada no banco ou não
 ![image](https://github.com/user-attachments/assets/916ab487-b929-4316-a297-d0989af41f23)
 ![image](https://github.com/user-attachments/assets/cf351c5d-4a43-4e0f-87e6-a3e10fd3f5fc)
-### O tipo de ID  gerado pelo servidor do tipo = print abaixo não é válido para sistemas que vão para produção 
+##### O tipo de ID  gerado pelo servidor do tipo = print abaixo, não é válido para sistemas que vão para produção (um software de uma empresa) 
 ![image](https://github.com/user-attachments/assets/1852ca72-dc02-4d85-b964-0faf28a06650)
-### pois ter a sequencialmente os id não é seguro para o sistema
-## Mais seguro usar UUID para ninuém conseguir chutar id de dados e conseguir capturar
-## E por último a configuração do Course dentro do controller
+##### pois ter definido a notação JPA para gerar sequencialmente os ID, não é seguro para o sistema privado.
+##### Mais seguro usar tipo UUID para ninguém conseguir adivinhar o id de algum objeto que esta armazenado no banco, ou seja, chutar o id de algum dado e conseguir capturar essa informação privada de uma maneira pública não permitida.
+##### E por último a configuração do Course dentro do controller
+### ... voltando ao assundo do código para esta aplicação web :
 ##### em cada metodo colocar perto de assinatura dele 
 ```
 @CrossOrigin(origins = "*",allowedHeaders = "*")
