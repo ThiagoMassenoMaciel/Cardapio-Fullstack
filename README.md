@@ -244,7 +244,7 @@ npm install axios
 ``` data: query.data?.data  ``` tem tudo isso explicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
 ##### Agora execute a aplicação para test 
 
-´´´´
+´´´
 npm run dev
 ´´´
 
