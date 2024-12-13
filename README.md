@@ -63,6 +63,7 @@ Version 1.0
 ![image](https://github.com/user-attachments/assets/b2393718-8a5a-4d68-9ce3-04138f961a09)
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Depois de instalado postgresql , abra o pgAdmin , crie o banco food , e veja qual é o usuario.
+###### Precisa: ligar o pgAdmin, entrar com senha bd, conectar usuario e senha do banco do IntelliJ, executar backend no intelliJ , aí vejo se no navegador aparece igual a kipper dev
 ##### Vai na pasta src/main/resorces/aplication.properties
 ###### dentro deste arquivo vai ficar mapeado a `url do banco de dados , o username e a senha`
 ###### `spring.datasource.url=jdbc:postgresql://localhost:5432/food` 
@@ -242,7 +243,9 @@ npm install axios
 ###### chame o metodo `useFoodData` dentro do componente `App.tsx`
 ``` data: query.data?.data  ``` tem tudo isso explicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
 ##### Agora execute a aplicação para test 
-´´´´npm run dev´´´
+´´´´
+npm run dev
+´´´
 ###### Precisa: ligar o pgAdmin, entrar com senha bd, conectar usuario e senha do banco do IntelliJ, executar backend no intelliJ , aí vejo se no navegador aparece igual a kipper dev
 ![image](https://github.com/user-attachments/assets/a764d9f2-160b-4e27-9cb4-fedeba423c75)
 ##### Erro induzido
