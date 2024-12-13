@@ -8,8 +8,8 @@ Version 1.0
 ##### React - Biblioteca - `react query`
 ## - Back-end 
 ##### java
-###### spring initializer
-###### PostgreSQL
+##### spring initializer
+##### PostgreSQL
 
 
 ## [part1](https://youtu.be/lUVureR5GqI?si=MrS2uFq2hSk-41yY)
