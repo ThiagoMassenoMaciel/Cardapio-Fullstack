@@ -1,6 +1,17 @@
 # <h1>Cardapio-Fullstack</h1>
 ###### [próxima aplicação para eu fazer tudo usando docker](https://medium.com/swlh/creating-and-deploying-a-full-stack-web-application-31ad5c9f3b77#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImM4OGQ4MDlmNGRiOTQzZGY1M2RhN2FjY2ZkNDc3NjRkMDViYTM5MWYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDU5ODMxODQzOTU2NjA3NDQ5OTciLCJlbWFpbCI6InRoaWFnb21hc3Nlbm8zQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3MzAxNDg5NTIsIm5hbWUiOiJUaGlhZ28gTWFzc2VubyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKSWpSYzNPQW5fZE96M0VGaEtqc0xYc1ItMVZ2S2s1TzhiQ21QU3ZFMng1c1EtWFM4PXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlRoaWFnbyIsImZhbWlseV9uYW1lIjoiTWFzc2VubyIsImlhdCI6MTczMDE0OTI1MiwiZXhwIjoxNzMwMTUyODUyLCJqdGkiOiI0MDNmZTM1ZDEyN2I5NTU4ZDM4NTk3Y2ZkN2YwZmI0ZTIyYzE5MTQ4In0.F74XE-jYab5j7q8nl0K2146j53L8nTnb_ywoPSapCXeITRuegZ3yitkUJqbKJqObDs3ODyejrp1-VeEyE6nqAg8ofSKvsbZnru947dNKsQv4WJLd1IwLA3-WixbCoa0nctoHDBkFvQGNfk0NVoZFMhvC6kSNzCTZXNnxWDOgBCtwBq9DSVCAIEDIjl2CRTHUBwrlNmhnqjvzYleROB4copcMw6raw_RzIwXy1RzIaXfEYFxA7YZA9MhYJoSsMkPL_K5Tg0u_A2y-MlrUVTMLb05aljCNedJt__LtWXza27BNWVjGatqBePuH6h7x1FO_6obFo61E3w7FDD4qfeNOdA:~:text=%F0%9F%8E%89%F0%9F%8E%89%F0%9F%8E%89%20Congratulations!%20We%E2%80%99ve%20now,Production%20Deploy)
 Version 1.0
+# Tecnologias
+## - Front-end:
+##### TypeScript
+##### React
+##### React - Biblioteca - `react query`
+## - Back-end 
+##### java
+###### spring initializer
+###### PostgreSQL
+
+
 ## [part1](https://youtu.be/lUVureR5GqI?si=MrS2uFq2hSk-41yY)
 ### Desenvolver API usando Java Spring + bd Postgres
 ##### - Criar rotas , 
