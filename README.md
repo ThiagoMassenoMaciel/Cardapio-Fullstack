@@ -5,7 +5,7 @@ Version 1.0
 ## Front-end:
 ##### TypeScript
 ##### React
-##### React - Biblioteca - `react query` , `axios`
+##### React - Bibliotecas - `react query` , `axios`
 ## Back-end 
 ##### java
 ##### spring initializer
