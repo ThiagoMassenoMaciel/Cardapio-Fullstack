@@ -122,7 +122,12 @@ public FoodResponseDTO( Food food){
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Publicar nova comida no cardapio por um metodo dentro do `FoodController{}`
 ###### `public void saveFood(){}`
-###### dentro desta classe marque qual metodo vai fazer mapeamento para requisição POST para esse endpoint food ```    @PostMapping     public void saveFood(){     }```
+###### dentro desta classe marque qual metodo vai fazer mapeamento para requisição POST para esse endpoint food 
+```    
+@PostMapping public void saveFood(){
+	//resto do código
+}
+```
 ###### No método de requisição POST o client vai enviar no body o dado que ele quer postar
 ###### como vamos pegar esse body da requisição através de uma notação do Spring passado como parâmetro `@RequestBody`
 ###### essa notação avisa o spring para fazer injeção da depêndencia pegando o body do client POST e passar como parâmetro
