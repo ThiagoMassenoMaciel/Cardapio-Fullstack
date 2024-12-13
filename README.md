@@ -240,7 +240,7 @@ npm install axios
 ```
 ###### usar lib axios dentro do componente `useFoodData.ts` 
 ###### chame o metodo `useFoodData` dentro do componente `App.tsx`
-``` data: query.data?.data  ``` tem tudo isso esplicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
+``` data: query.data?.data  ``` tem tudo isso explicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
 ##### Agora execute a aplicação para test 
 ´´´´npm run dev´´´
 ###### Precisa: ligar o pgAdmin, entrar com senha bd, conectar usuario e senha do banco do IntelliJ, executar backend no intelliJ , aí vejo se no navegador aparece igual a kipper dev
