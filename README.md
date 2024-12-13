@@ -102,7 +102,8 @@ public interface FoodRepository extends JpaRepository<Food, Long> {
 ###### `List<FoodResponseDTO> foodlist = repository.findAll().stream().map(FoodResponseDTO::new).toList();`
 ###### Dentro do record `FoodResponseDTO{}` eu vou receber pelo parametro do contrutor dele um objeto do tipo Food , e por dentro do contrutor vou passando os atributos de um objeto para dentro do record usando os metodos getters gerados pelo lombok dentro do `Food{}`
 ###### para isso dar certo eu tenho que colocar colado entre assinatura e anotações da classe `Food{}` estas outras anotações que são do lombok 
-###### `@Getter @NoArgsConstructor 
+###### @Getter 
+###### @NoArgsConstructor 
 ###### @AllArgsConstructor 
 ###### @EqualsAndHashCode(of ="id")`
 ###### dentro do construtor do record `FoodResponseDTO{}` vai ficar assim 
