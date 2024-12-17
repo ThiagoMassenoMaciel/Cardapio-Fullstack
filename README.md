@@ -258,12 +258,16 @@ npm run dev
 ![image](https://github.com/user-attachments/assets/04d6b4e4-831a-4328-a0a5-75a9d145fc6b)
 ![image](https://github.com/user-attachments/assets/017ba190-e579-4713-9c26-989e913e5cbc)
 #### ---------------------------------------------------------------------------------------------------------------------------------
-### fazer o forme dentro do componente `create-modal`
+### fazer o <form> dentro do componente `create-modal`
 ###### que receba o input do título , preço , link url da imagem
-##### em vez de criar vários inputs crie o componente de variavel constante `Input`
+##### em vez de criar várias tags repetidas de inputs, crie o componente de variavel constante `Input` e reutilize-o mudando apenas o props
 ###### faço isso dentro do componente `Input` para pegar somente a informação do valor input alterado
 ```
 onChange={event => updateValue(event.target.value)}
 ```
-até agora foi gastado 5h em 26' de video
+#### ---------------------------------------------------------------------------------------------------------------------------------
+### Fazer uma requisição http do tipo post na  para o endpoint `/food`
+###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
+###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
+até agora foi gastado 6h em 29' de video
 
