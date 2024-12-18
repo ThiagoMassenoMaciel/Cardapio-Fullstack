@@ -317,6 +317,7 @@ export function CreateModal(){
 ###### depois de 10 tentativas a IA finalmente resolveu para mim [chat gemini](https://g.co/gemini/share/4294d2195184)
 ###### elas só me deu esta sugestão pois eu misturei o conteúdo do [video](https://youtu.be/gEUPN_Ct0jM?si=DlIItuCU3RTllWzL) com uma tentativa que inventei na minha cabeça usando o generics T
 ###### solução 
+
 ´´´
 import { useState } from 'react';
 
@@ -353,6 +354,7 @@ export function CreateModal() {
     </div>
   );
 }
+
 ´´´
 
 até agora foi gastado 8h em 29' de video
