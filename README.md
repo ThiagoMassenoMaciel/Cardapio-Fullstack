@@ -269,5 +269,50 @@ onChange={event => updateValue(event.target.value)}
 ### Fazer uma requisição http do tipo post na  para o endpoint `/food`
 ###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
 ###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
+```
+/*
+tem um problema pois o component reutilizável define que o updateValue somente receba string ou number e dentro do componente CreateModal estou passando como props para propriedade updateValue um tipo de variavel que não é nem string  e nem é number , é uma função
+*/
+
+import { useState } from 'react';
+
+interface InputProps{
+  label: string,
+  value: string | number,
+  //updateValue: (value:string | number): void /jeito do video dela
+  updateValue: (value:string | number) => void; //jeito certo
+  //updateValue:(value: any)=> void;
+}
+
+const Input = ({label, value, updateValue}:InputProps)=>{
+  return(
+    <>
+      <label>{label}</label>
+      <input value={value} onChange={event => updateValue(event.target.value)}></input>
+    </>
+  )
+}
+
+export function CreateModal(){
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState(0);
+  const [image, setImage] = useState("");
+
+  return(
+    <div className="modal-ovelay"> // serve para escurecer pedaço atrás do modal 
+      <div className="modal-body"> // dentro dessa div vai ficar o formulário
+        <h2>Cadastre um novo item no cardápio</h2>
+        <form className="input-container">
+          //erro updateValue esta esperando receber numero ou string, estou passando por props uma função
+          <Input label="title" value={title} updateValue={setTitle}  />
+          <Input label="price" value={price} updateValue={setPrice}  />
+          <Input label="image" value={image} updateValue={setImage}  />
+        </form>
+      </div>
+
+    </div>
+  )
+}
+```
 até agora foi gastado 6h em 29' de video
 
