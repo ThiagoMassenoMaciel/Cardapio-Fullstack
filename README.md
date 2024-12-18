@@ -320,41 +320,6 @@ export function CreateModal(){
 
 ´´´
 import { useState } from 'react';
-
-interface InputProps<T extends string | number> { // Use a generic type T limited to string or number
-  label: string;
-  value: T;
-  updateValue: (value: T) => void; // Update value argument matches generic type T
-}
-
-const Input = <T extends string | number>({ label, value, updateValue }: InputProps<T>) => {
-  return (
-    <>
-      <label>{label}</label>
-      <input value={value} onChange={(event) => updateValue(event.target.value as T)} />
-    </>
-  );
-};
-
-export function CreateModal() {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState(0);
-  const [image, setImage] = useState("");
-
-  return (
-    <div className="modal-ovelay">
-      <div className="modal-body">
-        <h2>Cadastre um novo item no cardápio</h2>
-        <form className="input-container">
-          <Input label="title" value={title} updateValue={setTitle} />
-          <Input label="price" value={price} updateValue={setPrice} />
-          <Input label="image" value={image} updateValue={setImage} />
-        </form>
-      </div>
-    </div>
-  );
-}
-
 ´´´
 
 até agora foi gastado 8h em 29' de video
