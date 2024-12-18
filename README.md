@@ -269,19 +269,18 @@ onChange={event => updateValue(event.target.value)}
 ### Fazer uma requisição http do tipo post na  para o endpoint `/food`
 ###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
 ###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
+###### tem um problema pois o component reutilizável define que o updateValue somente receba string ou number e dentro do componente CreateModal estou passando como props para propriedade updateValue um tipo de variavel que não é nem string  e nem é number , é uma função . Eu preciso definir um tipo de dado dentro do updateValue que posse aceiar receber por props aquela variável do state que tem um função dentro dela
 ```
 /*
-tem um problema pois o component reutilizável define que o updateValue somente receba string ou number e dentro do componente CreateModal estou passando como props para propriedade updateValue um tipo de variavel que não é nem string  e nem é number , é uma função
+Já tentei usar generics e nao da certo pois eu preciso definir o tipo de dado para cada um dos inputs
 */
-
 import { useState } from 'react';
 
 interface InputProps{
   label: string,
   value: string | number,
-  //updateValue: (value:string | number): void /jeito do video dela
-  updateValue: (value:string | number) => void; //jeito certo
-  //updateValue:(value: any)=> void;
+  updateValue: (value:string | number) => void; //primeira coisa digitada
+  //updateValue:(value: any)=> void;// solucao da dev kipper jeito do video dela
 }
 
 const Input = ({label, value, updateValue}:InputProps)=>{
@@ -314,5 +313,8 @@ export function CreateModal(){
   )
 }
 ```
-até agora foi gastado 6h em 29' de video
+###### erro dizia , 'Dispatch<SetStateAction<number>>' e 'Dispatch<SetStateAction<string>>' não é compativel com    '(value: string | number)' , logo inclui esse tipo 'SetStateAction<number| string>'
+
+até agora foi gastado 7h em 29' de video
+encontri um bug fiz igual a kipper dev e apareceu um erro
 
