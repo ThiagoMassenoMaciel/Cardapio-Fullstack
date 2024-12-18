@@ -302,7 +302,7 @@ export function CreateModal(){
       <div className="modal-body"> // dentro dessa div vai ficar o formulário
         <h2>Cadastre um novo item no cardápio</h2>
         <form className="input-container">
-          //erro updateValue esta esperando receber numero ou string, estou passando por props uma função
+          //erro updateValue esta esperando receber numero ou string, estou passando por props uma função do hook useState
           <Input label="title" value={title} updateValue={setTitle}  />
           <Input label="price" value={price} updateValue={setPrice}  />
           <Input label="image" value={image} updateValue={setImage}  />
@@ -313,9 +313,48 @@ export function CreateModal(){
   )
 }
 ```
-###### erro dizia , 'Dispatch<SetStateAction<number>>' e 'Dispatch<SetStateAction<string>>' não é compativel com    '(value: string | number)' , logo inclui esse tipo 'SetStateAction<number| string>'
+###### me ajudou a resolver o bug [link video](https://youtu.be/gEUPN_Ct0jM?si=DlIItuCU3RTllWzL)
+###### depois de 10 tentativas a IA finalmente resolveu para mim [chat gemini](https://g.co/gemini/share/4294d2195184)
+###### elas só me deu esta sugestão pois eu misturei o conteúdo do [video](https://youtu.be/gEUPN_Ct0jM?si=DlIItuCU3RTllWzL) com uma tentativa que inventei na minha cabeça usando o generics T
+###### solução 
+´´´
+import { useState } from 'react';
 
+interface InputProps<T extends string | number> { // Use a generic type T limited to string or number
+  label: string;
+  value: T;
+  updateValue: (value: T) => void; // Update value argument matches generic type T
+}
 
-até agora foi gastado 7h em 29' de video
-encontri um bug fiz igual a kipper dev e apareceu um erro
+const Input = <T extends string | number>({ label, value, updateValue }: InputProps<T>) => {
+  return (
+    <>
+      <label>{label}</label>
+      <input value={value} onChange={(event) => updateValue(event.target.value as T)} />
+    </>
+  );
+};
+
+export function CreateModal() {
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState(0);
+  const [image, setImage] = useState("");
+
+  return (
+    <div className="modal-ovelay">
+      <div className="modal-body">
+        <h2>Cadastre um novo item no cardápio</h2>
+        <form className="input-container">
+          <Input label="title" value={title} updateValue={setTitle} />
+          <Input label="price" value={price} updateValue={setPrice} />
+          <Input label="image" value={image} updateValue={setImage} />
+        </form>
+      </div>
+    </div>
+  );
+}
+´´´
+
+até agora foi gastado 8h em 29' de video
+encontri um bug fiz igual a kipper dev e apareceu um erro , demorei 2h
 
