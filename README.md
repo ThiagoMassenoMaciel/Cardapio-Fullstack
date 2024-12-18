@@ -315,6 +315,7 @@ export function CreateModal(){
 ```
 ###### erro dizia , 'Dispatch<SetStateAction<number>>' e 'Dispatch<SetStateAction<string>>' não é compativel com    '(value: string | number)' , logo inclui esse tipo 'SetStateAction<number| string>'
 
+
 até agora foi gastado 7h em 29' de video
 encontri um bug fiz igual a kipper dev e apareceu um erro
 
