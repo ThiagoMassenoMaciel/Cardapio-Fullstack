@@ -368,7 +368,7 @@ const postData = async (data:FoodData):AxiosPromise<void> => {
     return response;
 }
 
-export function useFoodData(){
+export function useFoodDataMutate(){
   const queryClient = useQueryClient();
   const mutate = useMutation({
     mutationFn: postData,
@@ -382,7 +382,64 @@ export function useFoodData(){
   return mutate
 }
 ```
+### Usar o mutate dentro do arquivo `create-modal.tsx` dentro da funcao `CreateModal()`
+###### e vai destruturar de dentro desse import a classe mutate
+###### cria a função que vai usar a função mutate com o objeto `FoodData` tal qual executa um post 
+###### coloca o id como opcional
+###### cria o botão para usuário clicar e o front fazer requisição POST enviando para o banco de dados
+```
+import { useState } from 'react';
+import { useFoodDataMutate } from '../hooks/useFoodDataMutate';
+import { FoodData } from '../interface/FoodData';
 
-até agora foi gastado 8h em 29' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
+interface InputProps<T extends string | number> { // Use a generic type T limited to string or number
+  label: string;
+  value: T;
+  updateValue: (value: T) => void; // Update value argument matches generic type T
+}
+
+const Input = <T extends string | number>({ label, value, updateValue }: InputProps<T>) => {
+//O <T extends string | number> é a parte que define o tipo genérico T.
+  return (
+    <>
+      <label>{label}</label>
+      <input value={value} onChange={(event) => updateValue(event.target.value as T)} />
+    </>
+  );
+};
+
+export function CreateModal() {
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState(0);
+  const [image, setImage] = useState("");
+
+  const {mutate} = useFoodDataMutate();
+
+  const submit = ()=>{
+    const foodData:FoodData ={
+      title,
+      price,
+      image
+    }
+    mutate(foodData)
+  }
+
+  return (
+    <div className="modal-ovelay">
+      <div className="modal-body">
+        <h2>Cadastre um novo item no cardápio</h2>
+        <form className="input-container">
+          <Input label="title" value={title} updateValue={setTitle} />
+          <Input label="price" value={price} updateValue={setPrice} />
+          <Input label="image" value={image} updateValue={setImage} />
+        </form>
+        <button onClick={submit} className='btn-secondary'>postar</button>
+      </div>
+    </div>
+  );
+}
+```
+
+até agora foi gastado 9h em 33'22" de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
 
 
