@@ -356,7 +356,8 @@ export function CreateModal() {
 ### Fazer uma requisição http do tipo post para o endpoint `/food`
 ###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
 ###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
-###### e colocar uma invalidação de query desatualizada
+###### e colocar uma invalidação da query anterior, que está desatualizada após o metodo POST ser concluido
+
 ```
 import axios,{ AxiosPromise} from "axios";
 import { FoodData } from "../interface/FoodData";
@@ -368,7 +369,7 @@ const postData = async (data:FoodData):AxiosPromise<void> => {
     return response;
 }
 
-export function useFoodDataMutate(){
+export function useFoodData(){
   const queryClient = useQueryClient();
   const mutate = useMutation({
     mutationFn: postData,
@@ -382,11 +383,11 @@ export function useFoodDataMutate(){
   return mutate
 }
 ```
-### Usar o mutate dentro do arquivo `create-modal.tsx` dentro da funcao `CreateModal()`
-###### e vai destruturar de dentro desse import a classe mutate
-###### cria a função que vai usar a função mutate com o objeto `FoodData` tal qual executa um post 
-###### coloca o id como opcional
-###### cria o botão para usuário clicar e o front fazer requisição POST enviando para o banco de dados
+#### ---------------------------------------------------------------------------------------------------------------------------------
+### Fazer o envio do formulário para o pedaço do código no front-end que fará a requisição POST
+###### dentro do arquivo `create-modal.tsx`
+###### fazer a função `submit()` que pega os valores do formulário e envia para hook `useFoodDataMutate.ts` usando a variavél `mutate`
+###### criar o botão fora do formulário, para ele executar a função submit
 ```
 import { useState } from 'react';
 import { useFoodDataMutate } from '../hooks/useFoodDataMutate';
@@ -397,7 +398,6 @@ interface InputProps<T extends string | number> { // Use a generic type T limite
   value: T;
   updateValue: (value: T) => void; // Update value argument matches generic type T
 }
-
 const Input = <T extends string | number>({ label, value, updateValue }: InputProps<T>) => {
 //O <T extends string | number> é a parte que define o tipo genérico T.
   return (
@@ -414,7 +414,7 @@ export function CreateModal() {
   const [image, setImage] = useState("");
 
   const {mutate} = useFoodDataMutate();
-
+// vai empurar aqueles dados do usuario obtidos no formulário para aquele pedaço do front end que vai fazer requisição http POST
   const submit = ()=>{
     const foodData:FoodData ={
       title,
@@ -439,7 +439,10 @@ export function CreateModal() {
   );
 }
 ```
+#### ---------------------------------------------------------------------------------------------------------------------------------
+### Chamar o componente `create-modal.tsx` dentro do componente `App.tsx` e escondê-lo quando não estiver aberto , e mostrar ele quando estiver aberto
+###### vai construir um estado `isModalOpen`
 
-até agora foi gastado 9h em 33'22" de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
+até agora foi gastado 9h40' em 34' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
 
 
