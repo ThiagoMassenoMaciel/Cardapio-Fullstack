@@ -486,7 +486,13 @@ function App() {
 export default App
 
 ```
+#### ---------------------------------------------------------------------------------------------------------------------------------
+### Agora vai estilizar o `create-modal.tsx` criando arquivo css dentro da mesma pasta que o tsx do modal
+###### n deu certo de primeira mesmo eu colocando o import no component do modal o react n leu o css
+![image](https://github.com/user-attachments/assets/d68b1eb4-4c06-474d-afba-986f4bcccbb8)
+######
 
-até agora foi gastado 9h40' em 34' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
+
+até agora foi gastado 11h20' em 36' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h , apareceu outro erro
 
 
