@@ -244,10 +244,9 @@ npm install axios
 ``` data: query.data?.data  ``` tem tudo isso explicado no video [kipper](https://youtu.be/n8RLfLunQzc?si=X7Ta1jBoPZ-umiKP)
 ##### Agora execute a aplicação para test 
 
-´´´
+```
 npm run dev
-´´´
-
+```
 ###### Precisa: ligar o pgAdmin, entrar com senha bd, conectar usuario e senha do banco do IntelliJ, executar backend no intelliJ , aí vejo se no navegador aparece igual a kipper dev
 ![image](https://github.com/user-attachments/assets/a764d9f2-160b-4e27-9cb4-fedeba423c75)
 ##### Erro induzido
@@ -476,10 +475,10 @@ function App() {
         
         
       </div>
-      // eu so vou mostrar o meu modal quando isModalOpen for true
-      // se for true irei fazer aparecer o componente modal 
+      {/* eu so vou mostrar o meu modal quando isModalOpen for true
+       se for true irei fazer aparecer o componente modal */}
       {isModalOpen && <CreateModal/>}
-      <button onClick={handleOpenModal}></button>
+      <button onClick={handleOpenModal}>novo</button>
     </div>
   )
 }
