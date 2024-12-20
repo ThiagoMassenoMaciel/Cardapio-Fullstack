@@ -265,10 +265,7 @@ npm run dev
 ```
 onChange={event => updateValue(event.target.value)}
 ```
-#### ---------------------------------------------------------------------------------------------------------------------------------
-### Fazer uma requisição http do tipo post na  para o endpoint `/food`
-###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
-###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
+
 ###### tem um problema pois o component reutilizável define que o updateValue somente receba string ou number e dentro do componente CreateModal estou passando como props para propriedade updateValue um tipo de variavel que não é nem string  e nem é number , é uma função . Eu preciso definir um tipo de dado dentro do updateValue que posse aceiar receber por props aquela variável do state que tem um função dentro dela
 ```
 /*
@@ -355,7 +352,37 @@ export function CreateModal() {
   );
 }
 ```
+#### ---------------------------------------------------------------------------------------------------------------------------------
+### Fazer uma requisição http do tipo post para o endpoint `/food`
+###### esta função vai mandar os dados digitados pelo cliente para o backend pelo método POST
+###### dentro da pasta `src/components/hooks/` criar um ts useFoodDataMutate.ts
+###### e colocar uma invalidação de query desatualizada
+```
+import axios,{ AxiosPromise} from "axios";
+import { FoodData } from "../interface/FoodData";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+const API_URL = 'http://localhost:8080';
+//vai retornar uma promisse vazia, pois só precisa retornar a confirmação que indique que de fato foi armazenado pelo backend o que usuario inputou
+const postData = async (data:FoodData):AxiosPromise<void> => {
+    const response = axios.post(API_URL + '/food', data);
+    return response;
+}
 
-até agora foi gastado 8h em 29' de video
-encontri um bug fiz igual a kipper dev e apareceu um erro , demorei 2h
+export function useFoodData(){
+  const queryClient = useQueryClient();
+  const mutate = useMutation({
+    mutationFn: postData,
+    retry:2, // diz quantas vezes tentar novamente antes de retonar algum erro
+    onSuccess : ()=>{ // se essa funcao der certo executar essa function
+      //invalide os gets antigos que tenham esta chave 'food-data' pois o get deve trazer o dado atualizado
+      queryClient.invalidateQueries({ queryKey: ['food-data'] })
+    }
+  })
+
+  return mutate
+}
+```
+
+até agora foi gastado 8h em 29' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
+
 
