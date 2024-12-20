@@ -442,6 +442,51 @@ export function CreateModal() {
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Chamar o componente `create-modal.tsx` dentro do componente `App.tsx` e escondê-lo quando não estiver aberto , e mostrar ele quando estiver aberto
 ###### vai construir um estado `isModalOpen`
+###### vou colocar um `<button>` para usuário clicar e fazer executar a função que vai fazer aparecer o modal
+###### no butão quando clicado executar a função `handleOpenModal` que vai mudar o estado do `isModalOpen` 
+###### [se o estado estiver true]-> [`handleOpenModal()` muda para false] e virce e versa
+```
+import { useState } from 'react';
+import './App.css'
+import {Card} from './components/card/card'
+import { useFoodData } from './components/hooks/useFoodData'
+import { CreateModal } from './components/create-modal/create-modal';
+
+function App() {
+  const { data } = useFoodData();
+  // criado novo estado
+  const [ isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    //vai pegar o valor previo e vai mudar estado
+    setIsModalOpen( prev => !prev)
+  }
+
+  return (
+    <div className="container">
+      <h1>Cardápio</h1>
+      <div className="card-grid">
+        {data?.map(foodData => 
+          <Card 
+            price={foodData.price} 
+            title={foodData.title} 
+            image={foodData.image}
+          />
+        )}
+        
+        
+      </div>
+      // eu so vou mostrar o meu modal quando isModalOpen for true
+      // se for true irei fazer aparecer o componente modal 
+      {isModalOpen && <CreateModal/>}
+      <button onClick={handleOpenModal}></button>
+    </div>
+  )
+}
+
+export default App
+
+```
 
 até agora foi gastado 9h40' em 34' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h
 
