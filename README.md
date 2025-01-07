@@ -488,9 +488,147 @@ export default App
 ```
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Agora vai estilizar o `create-modal.tsx` criando arquivo css dentro da mesma pasta que o tsx do modal
-###### n deu certo de primeira mesmo eu colocando o import no component do modal o react n leu o css
+###### n deu certo de primeira mesmo eu colocando o import css no component do modal o react n leu o css
+###### `modal.css`
+```
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-overlay .modal-body{
+  background-color: white;
+  padding: 24px;
+  height: 60%;
+  width: 60%;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-overlay .modal-body h2{
+  font-size: 32px;
+}
+
+.modal-overlay .modal-body .input-container{
+  width: calc(100% - 24px);
+}
+
+.modal-overlay .modal-body input{
+  padding: 12px;
+  border: 2px solid #c6c5c5c5;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 12px;
+  width: 100%;
+
+  margin-bottom: 12px;
+}
+
+.modal-overlay .modal-body label{
+  color: #242424;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.modal-overlay .modal-body .btn-secondary{
+  position: initial;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.modal-overlay .modal-body .btn-secondary:hover{
+  background-color: #3a44f8;
+  transform: scale(1);
+}
+```
+###### resultado no front-end
 ![image](https://github.com/user-attachments/assets/d68b1eb4-4c06-474d-afba-986f4bcccbb8)
-######
+###### suspeitei o motivo ter sido muitos nomes de classes na mesma cadeia `modal.css`
+```
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-body{
+  background-color: white;
+  padding: 24px;
+  height: 60%;
+  width: 60%;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-body h2{
+  font-size: 32px;
+}
+
+.modal-body .input-container{
+  width: calc(100% - 24px);
+}
+
+.modal-body input{
+  padding: 12px;
+  border: 2px solid #c6c5c5c5;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 12px;
+  width: 100%;
+
+  margin-bottom: 12px;
+}
+
+.modal-body label{
+  color: #242424;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.modal-body .btn-secondary{
+  position: initial;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.modal-body .btn-secondary:hover{
+  background-color: #3a44f8;
+  transform: scale(1);
+}
+```
+###### com resultado parecido da Kipper DEV
+![image](https://github.com/user-attachments/assets/058db16b-0c70-4fc2-9c0c-f67444796a1a)
 
 
 até agora foi gastado 11h20' em 36' de video ... fiz igual a kipper dev e apareceu um erro , demorei 2h , apareceu outro erro
