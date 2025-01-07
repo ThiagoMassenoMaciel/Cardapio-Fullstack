@@ -217,7 +217,7 @@ exemplo a minha aplicação esta rodando no meu localhost na porta 3000
 
 até aqui 8h30 
 
-## [part2](https://youtu.be/WHruc3_2z68) 
+## [part2](https://youtu.be/WHruc3_2z68?si=YOITuLtyxWQjQanU) 
 ### Desenvolver Front-end e conectar com API 
 #### ---------------------------------------------------------------------------------------------------------------------------------
 ### Consumir e publicar dados
